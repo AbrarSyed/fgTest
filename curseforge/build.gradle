@@ -41,7 +41,7 @@ minecraft {
 }
 
 curse {
-    apiKey = project.curseforge_key // saved in my gradle.properties file
+    apiKey = project.curseforge_key // saved in my gradle.properties file.  http://minecraft.curseforge.com/my-api-tokens
     projectId = "59652" // my project url is http://minecraft.curseforge.com/mc-mods/59652-seretroomsmod/
     changelog = """
     Yay for groovy mutline strings
