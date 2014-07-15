@@ -1,1 +1,5 @@
 */eclipse
+*/assets
+*.ipr
+*.iml
+*.iws
