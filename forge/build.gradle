@@ -33,15 +33,16 @@ archivesBaseName = "modid"
 minecraft {
     //version = "1.7.2-10.12.0.1047" // FG 1.1 testing
     //version = "1.7.2-10.12.1.1061" // MC 1.7.2 testing 
-    version = "1.7.10-10.13.0.1151" // MC 1.7.10 testing
-    assetDir = "eclipse/assets"
+    version = "1.7.10-10.13.1.1217" // MC 1.7.10 testing
+    mappings = "snapshot_20140918"
+    runDir = "eclipse"
     replace "@TEST1@", "test1"
     replace "@TEST2@", "1+2 = ${1+2}"
    // at 'test_at.cfg'
 }
 
 dependencies {
-    compile 'com.mod-buildcraft:buildcraft:6.0.17:dev'
+//    compile 'com.mod-buildcraft:buildcraft:6.0.17:dev'
 }
 
 processResources
@@ -64,4 +65,10 @@ processResources
 
 //reobf.useRetroGuard = true
 
-runServer { args "--nogui" }
+//import net.minecraftforge.gradle.tasks.CrowdinDownloadTask;
+//task crowdin(type: CrowdinDownloadTask) {
+//	projectId = "..."
+//	apiKey = "..."
+//	output = "build/locales.zip"
+//	extract = false
+//}

@@ -11,6 +11,7 @@ bin
 
 # run place
 run
+eclipse
 
 # intellij stuff
 .idea
