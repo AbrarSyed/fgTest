@@ -56,6 +56,16 @@ curse {
     // allows you to add extra compatible MC versions. The one specified in the minecraft{} block is used by default.
     // addGameVersion "1.7.1"
     // addGameversion "1.7.0", "1.7.4"
+    
+    // Allows you to specify additional files that should be uploaded with your main jar
+    additionalArtifact deobfJar
+    // additionalArtifact "$project.buildDir/libs/A-Custom-File.txt"
+    
+}
+
+task deobfJar(type: Jar, dependsOn: 'classes') {
+    from sourceSets.main.output
+    classifier = 'deobf'
 }
 
 dependencies {
