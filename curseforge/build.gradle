@@ -29,12 +29,14 @@ apply plugin: 'forge'
 
 version = "1.0"
 group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+archivesBaseName = "testing"
 
 minecraft {
     //version = "1.7.2-10.12.0.1047" // FG 1.1 testing
-    version = "1.7.2-10.12.1.1061"
-    assetDir = "eclipse/assets"
+    //version = "1.7.2-10.12.1.1061" // MC 1.7.2 testing 
+    version = "1.7.10-10.13.2.1232" // MC 1.7.10 testing
+    //mappings = "snapshot_20140918"
+    runDir = "eclipse"
     replace "@TEST1@", "test1"
     replace "@TEST2@", "1+2 = ${1+2}"
    // at 'test_at.cfg'
@@ -44,14 +46,13 @@ curse {
     apiKey = project.curseforge_key // saved in my gradle.properties file.  http://minecraft.curseforge.com/my-api-tokens
     projectId = "59652" // my project url is http://minecraft.curseforge.com/mc-mods/59652-seretroomsmod/
     changelog = """
-    Yay for groovy mutline strings
-    This is a testing thing. please remove entirely.
-    lalalala
+    This is ABrar Testing soem CurseForge plugin features..
+    Please reject/ignore this upload.
     """
     releaseType = "alpha"
 
     // the default obfuscated jar is uploaded by default
-    // artifact = project.file("some/jar/to/upload.jar")
+    artifact = project.file("some/jar/to/upload.jar")
 
     // allows you to add extra compatible MC versions. The one specified in the minecraft{} block is used by default.
     // addGameVersion "1.7.1"

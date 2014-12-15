@@ -33,16 +33,36 @@ archivesBaseName = "modid"
 minecraft {
     //version = "1.7.2-10.12.0.1047" // FG 1.1 testing
     //version = "1.7.2-10.12.1.1061" // MC 1.7.2 testing 
-    version = "1.7.10-10.13.1.1217" // MC 1.7.10 testing
-    mappings = "snapshot_20140918"
+    version = "1.7.10-10.13.2.1232" // MC 1.7.10 testing
+    //version = "1.8-11.14.0.1252-1.8"
+    //version = "1.7.10-latest"
+    //mappings = "snapshot_20140918"
     runDir = "eclipse"
     replace "@TEST1@", "test1"
     replace "@TEST2@", "1+2 = ${1+2}"
-   // at 'test_at.cfg'
+    //at 'test_at.cfg'
+}
+
+println "VERSION = $minecraft.version"
+println "FORGE = $minecraft.apiVersion"
+
+repositories {
+    mavenCentral()
+    maven {
+        name "Mobius Repo"
+        url "http://mobiusstrip.eu/maven"
+    }
+    maven {
+        name 'CB Maven FS'
+        url "http://chickenbones.net/maven/"
+    }
 }
 
 dependencies {
-//    compile 'com.mod-buildcraft:buildcraft:6.0.17:dev'
+	//compile "codechicken:CodeChickenLib:1.7.10-1.1.1.105:dev"
+	//compile "codechicken:CodeChickenCore:1.7.10-1.0.4.29:dev"
+	//compile "codechicken:NotEnoughItems:1.7.10-1.0.3.66:dev"
+	//compile "mcp.mobius.waila:Waila:1.5.6_dev1_1.7.10"
 }
 
 processResources
