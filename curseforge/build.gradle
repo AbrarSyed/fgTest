@@ -40,6 +40,12 @@ minecraft {
    // at 'test_at.cfg'
 }
 
+task deobfJar(type: Jar, dependsOn: 'classes') {
+    from sourceSets.main.output
+    classifier = 'deobf'
+}
+tasks.assemble.dependsOn deobfJar
+
 curse {
     apiKey = project.curseforge_key // saved in my gradle.properties file.  http://minecraft.curseforge.com/my-api-tokens
     projectId = "59652" // my project url is http://minecraft.curseforge.com/mc-mods/59652-seretroomsmod/
@@ -56,6 +62,11 @@ curse {
     // allows you to add extra compatible MC versions. The one specified in the minecraft{} block is used by default.
     // addGameVersion "1.7.1"
     // addGameversion "1.7.0", "1.7.4"
+    
+    // Allows you to specify additional files that should be uploaded with your main jar
+    additionalArtifact deobfJar
+    // additionalArtifact "$project.buildDir/libs/A-Custom-File.txt"
+    
 }
 
 dependencies {
