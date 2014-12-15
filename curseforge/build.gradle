@@ -40,6 +40,12 @@ minecraft {
    // at 'test_at.cfg'
 }
 
+task deobfJar(type: Jar, dependsOn: 'classes') {
+    from sourceSets.main.output
+    classifier = 'deobf'
+}
+tasks.assemble.dependsOn deobfJar
+
 curse {
     apiKey = project.curseforge_key // saved in my gradle.properties file.  http://minecraft.curseforge.com/my-api-tokens
     projectId = "59652" // my project url is http://minecraft.curseforge.com/mc-mods/59652-seretroomsmod/
@@ -61,11 +67,6 @@ curse {
     additionalArtifact deobfJar
     // additionalArtifact "$project.buildDir/libs/A-Custom-File.txt"
     
-}
-
-task deobfJar(type: Jar, dependsOn: 'classes') {
-    from sourceSets.main.output
-    classifier = 'deobf'
 }
 
 dependencies {
