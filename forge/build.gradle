@@ -85,6 +85,8 @@ processResources
 
 //reobf.useRetroGuard = true
 
+reobf.addExtraSrgFile "testDir"
+
 //import net.minecraftforge.gradle.tasks.CrowdinDownloadTask;
 //task crowdin(type: CrowdinDownloadTask) {
 //	projectId = "..."
