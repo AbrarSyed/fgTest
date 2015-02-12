@@ -1,7 +1,6 @@
 package com.example.examplemod;
 
 import net.minecraft.init.Blocks;
-import buildcraft.api.power.PowerHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -19,8 +18,5 @@ public class ExampleMod
     {
 		// some example code
         System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
-
-        // buildcraft reference test
-        System.out.println("BuildCraft in colorBlind mode?  >> "+PowerHandler.Type.PIPE);
     }
 }
