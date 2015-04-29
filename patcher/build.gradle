@@ -1,0 +1,40 @@
+apply plugin: "net.minecraftforge.gradle.patcher"
+
+minecraft {
+    version = "1.8"
+    //mappings = 'stable_16'
+    mappings = "snapshot_nodoc_20141130"
+    workspaceDir = "projects"
+    versionJson = "forge/fml/jsons/1.8-dev.json"
+    
+    projects {
+        fml {
+            rootDir 'forge/fml'
+            patchDir "forge/fml/patches/minecraft"
+            patchAfter "clean"
+            genPatchesFrom "clean"
+
+            patchPrefixOriginal "../src-base/minecraft"
+            patchPrefixChanged "../src-work/minecraft"
+            mainClassClient "GradleStart"
+            tweakClassClient "net.minecraftforge.fml.common.launcher.FMLTweaker"
+            mainClassServer "GradleStartServer"
+            tweakClassServer "net.minecraftforge.fml.common.launcher.FMLServerTweaker"
+        }
+        forge {
+            rootDir "forge"
+            patchDir "forge/patches/minecraft"
+            patchAfter "fml"
+            genPatchesFrom "fml"
+
+            patchPrefixOriginal "../src-base/minecraft"
+            patchPrefixChanged "../src-work/minecraft"
+            mainClassClient "GradleStart"
+            tweakClassClient "net.minecraftforge.fml.common.launcher.FMLTweaker"
+            mainClassServer "GradleStartServer"
+            tweakClassServer "net.minecraftforge.fml.common.launcher.FMLServerTweaker"
+        }
+    }
+}
+
+extractFmlSources { exclude "**/SideOnly.java", "**/Side.java" }
