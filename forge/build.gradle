@@ -18,9 +18,10 @@ buildscript {
 }
 
 repositories {
+    mavenLocal()
     maven {
-        name = "local"
-        url = "file://home/abrarsyed/modding/repo/"
+        name = "localRepo"
+        url = "file://localhost/home/abrarsyed/modding/repo/"
     }
 }
 
@@ -34,8 +35,7 @@ minecraft {
     //version = "1.7.2-10.12.0.1047" // FG 1.1 testing
     //version = "1.7.2-10.12.1.1061" // MC 1.7.2 testing 
     //version = "1.7.10-10.13.2.1232" // MC 1.7.10 testing
-    version = "1.8-11.14.0.1252-1.8"
-    //version = "1.7.10-latest"
+    version = "1.8-11.14.1.1411"
     //mappings = "snapshot_20140918" // MC 1.7
     mappings = "snapshot_20141001" // MC 1.8
     runDir = "eclipse"
@@ -46,25 +46,6 @@ minecraft {
 
 println "VERSION = $minecraft.version"
 println "FORGE = $minecraft.apiVersion"
-
-repositories {
-    mavenCentral()
-    maven {
-        name "Mobius Repo"
-        url "http://mobiusstrip.eu/maven"
-    }
-    maven {
-        name 'CB Maven FS'
-        url "http://chickenbones.net/maven/"
-    }
-}
-
-dependencies {
-	//compile "codechicken:CodeChickenLib:1.7.10-1.1.1.105:dev"
-	//compile "codechicken:CodeChickenCore:1.7.10-1.0.4.29:dev"
-	//compile "codechicken:NotEnoughItems:1.7.10-1.0.3.66:dev"
-	//compile "mcp.mobius.waila:Waila:1.5.6_dev1_1.7.10"
-}
 
 processResources
 {
@@ -84,14 +65,4 @@ processResources
 
 runClient.args "--username", project.mcUsername, "--password", project.mcPassword
 
-//reobf.useRetroGuard = true
-
 reobf.addExtraSrgFile "testDir"
-
-//import net.minecraftforge.gradle.tasks.CrowdinDownloadTask;
-//task crowdin(type: CrowdinDownloadTask) {
-//	projectId = "..."
-//	apiKey = "..."
-//	output = "build/locales.zip"
-//	extract = false
-//}

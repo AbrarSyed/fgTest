@@ -4,3 +4,7 @@
 *.iml
 *.iws
 *.swp
+*/.metadata
+*/.classpath
+*/.project
+
