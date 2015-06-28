@@ -1,10 +1,11 @@
-*/eclipse
-*/assets
-*.ipr
-*.iml
-*.iws
-*.swp
-*/.metadata
-*/.classpath
-*/.project
+**/eclipse
+**/assets
+**/*.ipr
+**/*.iml
+**/*.iws
+**/*.swp
+**/.metadata
+**/.classpath
+**/.project
+**/*.launch
 
