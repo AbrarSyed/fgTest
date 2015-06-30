@@ -21,7 +21,7 @@ repositories {
     mavenLocal()
     maven {
         name = "localRepo"
-        url = "file://localhost/home/abrarsyed/modding/repo/"
+        url = "file:///home/abrarsyed/modding/repo/"
     }
 }
 
