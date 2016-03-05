@@ -24,8 +24,8 @@ group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-
 archivesBaseName = "modid"
 
 minecraft {
-    version = "1.8"
-    mappings = "snapshot_20150611"
+    mappings = "snapshot_20160305"
+    version = "1.9"
     runDir = "runDir"
 
     tweakClass = "com.example.tweaker.ExampleTweaker"
@@ -37,6 +37,7 @@ minecraft {
 
 dependencies {
     //compile 'org.ow2.asm:asm-debug-all:5.0.3'
+    compile 'net.minecraft:launchwrapper:1.12'
 }
 
 //runClient.args "--username", project.mcUsername, "--password", project.mcPassword
